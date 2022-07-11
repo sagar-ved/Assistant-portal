@@ -1,0 +1,20 @@
+Instruction for Exam :)
+1. The Exam Should be TRansparent.
+2. Any kind of mis-disciplinary action may cause degradation of marks or expel from the exam permanently.
+3. This is a 90 Minutes exam.
+4. The Questions are divided into three levels. Easy, Medium, and Hard.
+5. Every level has two code images for experiment language.
+6. Every code has five questions.
+7. The Marking System for each level is given the following.
+--> Easy   5 Marks
+--> Medium   7 Marks
+--> Hard    10 Marks
+8. The time is fixed for each question which is given following.
+--> Easy   5 Min
+--> Medium   7 Min
+--> Hard    10 Min
+9. Time for each level will be 
+--> Easy   20 min
+--> Medium  28 min
+--> Hard    40 min
+    Buffer Time 2 Min
