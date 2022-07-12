@@ -5,8 +5,11 @@
 package recruitment.assistant.portal;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +23,7 @@ public class DemographicRegistration extends javax.swing.JFrame {
     public DemographicRegistration() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -115,7 +119,7 @@ public class DemographicRegistration extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        jLabel8.setText("works as");
+        jLabel8.setText("Profession");
 
         jComboBox1.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Professional", "Student","others"}));
@@ -159,8 +163,9 @@ public class DemographicRegistration extends javax.swing.JFrame {
         jLabel12.setText("Your Area of Interest");
 
         jTextField2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jTextField2.setText("i.e. Artificial Intelligence");
+        jTextField2.setText("i.e. Artificial Intelligence"); // NOI18N
 
+        jCheckBox1.setSelected(true);
         jCheckBox1.setText("I hereby Solemnly aﬀirm that all the details provided above are true to the best of my knowledge. I accept all  terms and conditions mentioned here.");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -387,6 +392,13 @@ public class DemographicRegistration extends javax.swing.JFrame {
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
+        
+        if(jCheckBox1.isSelected()){
+            jButton1.setEnabled(true);
+        }
+        else{
+            jButton1.setEnabled(false);
+        }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -408,17 +420,48 @@ public class DemographicRegistration extends javax.swing.JFrame {
             }
 //               System.out.println(Fullname);
            String gender = genderbox.getSelectedItem().toString();
-           System.out.print(gender);
+           String day = jComboBox4.getSelectedItem().toString();
+           int intmonth = jComboBox5.getSelectedIndex();
+           String month = Integer.toString(intmonth);
+           String year = jComboBox6.getSelectedItem().toString();
+//           System.out.println(month);
+           String dateofbirth = null;
+        try {
+            dateofbirth= NF.dateofbirth(day, month, year);
+        } catch (Exception ex) {
+            Logger.getLogger(DemographicRegistration.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//           System.out.println(dateofbirth);
+           
+           String profession = jComboBox1.getSelectedItem().toString();
+           String mobile = jTextField3.getText();
+           String email = jTextField4.getText();
+           String favLanguage = jComboBox2.getSelectedItem().toString();
+           String HighestQualification = jComboBox3.getSelectedItem().toString();
+           String state = jComboBox8.getSelectedItem().toString();
+           String country = jComboBox7.getSelectedItem().toString();
+           String areaOfInterest = jTextField2.getText();
+           String ID = null;
+        try {
+            ID = NF.IDgenrator("UserDemographicData","Entrant");
+//            System.out.println(ID);
+        } catch (Exception ex) {
+            Logger.getLogger(DemographicRegistration.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
            
         
         try{
-            String query = "insert into UserDemographicData values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "insert into UserDemographicData values(\""+ID+"\",\""+Fullname+"\",\""+gender+"\",\""+dateofbirth+"\",\""+profession+"\",\""+mobile+"\",\""+email+"\",\""+favLanguage+"\",\""+HighestQualification+"\",\""+state+"\",\""+country+"\",\""+areaOfInterest+"\",\" Accepted\", \"0\");";
             RecruitmentAssistantPortal RAP = new RecruitmentAssistantPortal();
-            Connection demographicUpdateQuery = RecruitmentAssistantPortal.connecttodatabase();
-            
+            Connection demographicUpdateQueryConnection = RecruitmentAssistantPortal.connecttodatabase();
+            PreparedStatement create = demographicUpdateQueryConnection.prepareStatement(query);
+            create.executeUpdate();
+//            System.out.println("QueryPrinted");
         }
         catch(Exception e){
-        
+           ImageIcon icon = new ImageIcon("Incorrect Password.png");
+           JOptionPane.showMessageDialog(null,"<html><b style=\"color: red; font-size:10px\">Please<br> Fill the information Carefully</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -448,11 +491,13 @@ public class DemographicRegistration extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(DemographicRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new DemographicRegistration().setVisible(true);
+                
             }
         });
     }

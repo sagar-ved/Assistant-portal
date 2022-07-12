@@ -46,7 +46,7 @@ public class NecessaryFunctions extends RecruitmentAssistantPortal{
     }
     
     public String dateofbirth(String day,String month, String year) throws Exception{
-        String dateofbirth = year+" "+month+" "+day;
+        String dateofbirth = year+"-"+month+"-"+day;
         return dateofbirth;
     }
     
