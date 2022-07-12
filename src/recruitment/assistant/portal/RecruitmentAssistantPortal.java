@@ -54,12 +54,16 @@ public class RecruitmentAssistantPortal {
             Scanner sc = new Scanner(System.in);
             Connection con = connecttodatabase();
             //System.out.print("Connection Establish! Level 2 \n");
-            PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS AdminData (UserName varchar(10) NOT NULL, UserPassword VARCHAR(15) NOT NULL,PRIMARY KEY (UserName));");
-            System.out.print("Database Created! Level 3 \n");
+            PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS AdminData (UserName varchar(10) NOT NULL, UserPassword VARCHAR(15) NOT NULL, AdminName  VARCHAR(30) NOT NULL,PRIMARY KEY (UserName));");
+            //System.out.print("Database Created! Level 3 \n");
             create.executeUpdate();
-            create = con.prepareStatement("create table if not exists UserDemographicData( ParticipantID varchar(15) not null, ParticipantName varchar(50) not null, Gender varchar(10) not null, Dateofbirth date not null, worksas varchar(20) not null, phonenumber varchar(12) not null,email varchar(50) not null, FavouriteLanguage varchar(20) not null, Highesteducation varchar(30) not null, state varchar(30) not null, country varchar(30) not null, fieldofinterest varchar(100) not null, termsandconditions varchar(50) not null, score int(5), primary key(ParticipantID));");
+//            create = con.prepareStatement("create table if not exists UserDemographicData( ParticipantID varchar(15) not null, ParticipantName varchar(50) not null, Gender varchar(10) not null, Dateofbirth date not null, worksas varchar(20) not null, phonenumber varchar(12) not null,email varchar(50) not null, FavouriteLanguage varchar(20) not null, Highesteducation varchar(30) not null, state varchar(30) not null, country varchar(30) not null, fieldofinterest varchar(100) not null, termsandconditions varchar(50) not null, score int(5), primary key(ParticipantID));");
+            create = con.prepareStatement("create table if not exists UserDemographicData( ParticipantID varchar(15) not null, ParticipantName varchar(50) not null, Gender varchar(10) not null, Dateofbirth date not null, profession varchar(20) not null, phonenumber varchar(12) not null,email varchar(50) not null, FavouriteLanguage varchar(20) not null, Highesteducation varchar(30) not null, state varchar(30) not null, country varchar(30) not null, fieldofinterest varchar(100) not null, termsandconditions varchar(50) not null, score int(5), primary key(ParticipantID));");
             create.executeUpdate();
             System.out.print("Database Created! Level 4 \n");
+            
+            
+            
             /*while (true){
                 System.out.println("1:Insertion \n2:Deletion \n3:Exit");
                 System.out.print("Enter Choice:");

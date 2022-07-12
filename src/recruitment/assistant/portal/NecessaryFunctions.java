@@ -15,9 +15,9 @@ import java.util.Scanner;
 public class NecessaryFunctions extends RecruitmentAssistantPortal{
     
     public String IDgenrator(String table, String IDtype)throws Exception{
-        RecruitmentAssistantPortal RAP = new RecruitmentAssistantPortal();
+//        RecruitmentAssistantPortal RAP = new RecruitmentAssistantPortal();
         Connection query = RecruitmentAssistantPortal.connecttodatabase();
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
         //PreparedStatement create = query.prepareStatement("select count(*) from AdminData;");
         //System.out.println(create);
         
@@ -39,5 +39,18 @@ public class NecessaryFunctions extends RecruitmentAssistantPortal{
         String stringformattednumber = String.format("%05d", num);
         return stringformattednumber;      
     }
+    
+    public String FullName(String Firstname, String Lastname)throws Exception{
+        String fullname = Firstname+" "+Lastname;
+        return fullname;
+    }
+    
+    public String dateofbirth(String day,String month, String year) throws Exception{
+        String dateofbirth = year+" "+month+" "+day;
+        return dateofbirth;
+    }
+    
+    
+    
     
 }

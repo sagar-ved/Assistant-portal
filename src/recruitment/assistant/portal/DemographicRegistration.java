@@ -4,6 +4,10 @@
  */
 package recruitment.assistant.portal;
 
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author sagarved
@@ -39,7 +43,6 @@ public class DemographicRegistration extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
@@ -57,6 +60,7 @@ public class DemographicRegistration extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
+        jComboBox8 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
@@ -109,8 +113,6 @@ public class DemographicRegistration extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-
-        jTextField5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel8.setText("works as");
@@ -177,6 +179,46 @@ public class DemographicRegistration extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/registration.png"))); // NOI18N
 
+        jComboBox8.setEditable(true);
+        jComboBox8.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select state","AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"
+        }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -190,6 +232,7 @@ public class DemographicRegistration extends javax.swing.JFrame {
                             .addComponent(jTextField4)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jComboBox8, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,8 +248,7 @@ public class DemographicRegistration extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(128, 128, 128)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -220,13 +262,12 @@ public class DemographicRegistration extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboBox7, 0, 387, Short.MAX_VALUE))
-                        .addGap(63, 63, 63))
+                        .addGap(150, 150, 150))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCheckBox1)
                             .addComponent(jLabel12))
-                        .addGap(0, 49, Short.MAX_VALUE)))
-                .addGap(87, 87, 87)
+                        .addGap(0, 136, Short.MAX_VALUE)))
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -282,8 +323,8 @@ public class DemographicRegistration extends javax.swing.JFrame {
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                            .addComponent(jComboBox7))
+                            .addComponent(jComboBox7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(jComboBox8))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -350,11 +391,35 @@ public class DemographicRegistration extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        CodeExpertiseForm displaycodeexpertiseframe = new CodeExpertiseForm();
-        displaycodeexpertiseframe.show(); 
-        //display code expertise frame 
-        dispose();
+//        CodeExpertiseForm displaycodeexpertiseframe = new CodeExpertiseForm();
+//        displaycodeexpertiseframe.show(); 
+//        //display code expertise frame 
+//        dispose();
+            NecessaryFunctions NF = new NecessaryFunctions();
+            
+
+           String Firstname = jTextField1.getText();
+           String Lastname = jTextField6.getText();
+           String Fullname = null;
+            try {
+                Fullname = NF.FullName(Firstname, Lastname);
+            } catch (Exception ex) {
+                Logger.getLogger(DemographicRegistration.class.getName()).log(Level.SEVERE, null, ex);
+            }
+//               System.out.println(Fullname);
+           String gender = genderbox.getSelectedItem().toString();
+           System.out.print(gender);
+           
         
+        try{
+            String query = "insert into UserDemographicData values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            RecruitmentAssistantPortal RAP = new RecruitmentAssistantPortal();
+            Connection demographicUpdateQuery = RecruitmentAssistantPortal.connecttodatabase();
+            
+        }
+        catch(Exception e){
+        
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -403,6 +468,7 @@ public class DemographicRegistration extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -423,7 +489,6 @@ public class DemographicRegistration extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

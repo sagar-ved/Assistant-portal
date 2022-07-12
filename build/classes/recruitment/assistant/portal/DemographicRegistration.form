@@ -89,6 +89,7 @@
                               <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jComboBox8" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Component id="jComboBox4" min="-2" pref="102" max="-2" attributes="0"/>
@@ -107,7 +108,6 @@
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jTextField6" min="-2" pref="216" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -125,17 +125,16 @@
                               <Component id="jComboBox2" max="32767" attributes="0"/>
                               <Component id="jComboBox7" pref="387" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="49" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="136" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                   <Component id="jLabel13" min="-2" pref="574" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -205,8 +204,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextField5" pref="50" max="32767" attributes="0"/>
-                              <Component id="jComboBox7" max="32767" attributes="0"/>
+                              <Component id="jComboBox7" pref="50" max="32767" attributes="0"/>
+                              <Component id="jComboBox8" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
@@ -320,13 +319,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Liberation Sans" size="24" style="0"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
@@ -506,6 +498,20 @@
               <Image iconType="3" name="/images/registration.png"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox8">
+          <Properties>
+            <Property name="editable" type="boolean" value="true"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="24" style="0"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Select state&quot;,&quot;AP|Andhra Pradesh&quot;,&#xa;    &quot;AR|Arunachal Pradesh&quot;,&#xa;    &quot;AS|Assam&quot;,&#xa;    &quot;BR|Bihar&quot;,&#xa;    &quot;CT|Chhattisgarh&quot;,&#xa;    &quot;GA|Goa&quot;,&#xa;    &quot;GJ|Gujarat&quot;,&#xa;    &quot;HR|Haryana&quot;,&#xa;    &quot;HP|Himachal Pradesh&quot;,&#xa;    &quot;JK|Jammu and Kashmir&quot;,&#xa;    &quot;JH|Jharkhand&quot;,&#xa;    &quot;KA|Karnataka&quot;,&#xa;    &quot;KL|Kerala&quot;,&#xa;    &quot;MP|Madhya Pradesh&quot;,&#xa;    &quot;MH|Maharashtra&quot;,&#xa;    &quot;MN|Manipur&quot;,&#xa;    &quot;ML|Meghalaya&quot;,&#xa;    &quot;MZ|Mizoram&quot;,&#xa;    &quot;NL|Nagaland&quot;,&#xa;    &quot;OR|Odisha&quot;,&#xa;    &quot;PB|Punjab&quot;,&#xa;    &quot;RJ|Rajasthan&quot;,&#xa;    &quot;SK|Sikkim&quot;,&#xa;    &quot;TN|Tamil Nadu&quot;,&#xa;    &quot;TG|Telangana&quot;,&#xa;    &quot;TR|Tripura&quot;,&#xa;    &quot;UT|Uttarakhand&quot;,&#xa;    &quot;UP|Uttar Pradesh&quot;,&#xa;    &quot;WB|West Bengal&quot;,&#xa;    &quot;AN|Andaman and Nicobar Islands&quot;,&#xa;    &quot;CH|Chandigarh&quot;,&#xa;    &quot;DN|Dadra and Nagar Haveli&quot;,&#xa;    &quot;DD|Daman and Diu&quot;,&#xa;    &quot;DL|Delhi&quot;,&#xa;    &quot;LD|Lakshadweep&quot;,&#xa;    &quot;PY|Puducherry&quot;&#xa;})" type="code"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
