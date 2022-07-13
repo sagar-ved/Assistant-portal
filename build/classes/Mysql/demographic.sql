@@ -7,3 +7,5 @@ select * from UserDemographicData;
 
 
 select count(*) from UserDemographicData;
+
+insert into UserDemographic values(\""+id+"\",)

@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package recruitment.assistant.portal;
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -183,19 +189,52 @@ public class Portal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(jTextField1.getText().equals("admin")&& jPasswordField1.getText().equals("admin"))
-        {
-//            Adminpanel displayadminpanel = new Adminpanel();
-//            displayadminpanel.show();
-//            dispose();
-            setVisible(false);
-            new Adminpanel().setVisible(true);
-        }
-        else{
-            ImageIcon icon = new ImageIcon("Incorrect Password.png");
-            JOptionPane.showMessageDialog(null,"<html><b style=\"color: red; font-size:10px\">incorrect<br> Username or Password</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
-        }
+//        if(jTextField1.getText().equals("admin")&& jPasswordField1.getText().equals("admin"))
+//        {
+////            Adminpanel displayadminpanel = new Adminpanel();
+////            displayadminpanel.show();
+////            dispose();
+//            setVisible(false);
+//            new Adminpanel().setVisible(true);
+//        }
+//        else{
+//            ImageIcon icon = new ImageIcon("Incorrect Password.png");
+//            JOptionPane.showMessageDialog(null,"<html><b style=\"color: red; font-size:10px\">incorrect<br> Username or Password</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
+//        }
+
+
         
+        
+       try{
+           RecruitmentAssistantPortal RAP = new RecruitmentAssistantPortal();
+           Connection con = RecruitmentAssistantPortal.connecttodatabase();
+           String sql = "Select * from AdminData where UserName = ? and UserPassword = ?";
+           PreparedStatement pst = con.prepareStatement(sql);
+           pst.setString(1, jTextField1.getText());
+           pst.setString(2, jPasswordField1.getText());
+           var rs = pst.executeQuery();
+           //System.out.print(sql);
+           
+           if(rs.next()){
+               ImageIcon icon = new ImageIcon("correct password.png");
+               JOptionPane.showMessageDialog(null,"<html><b style=\"color: green; font-size:10px\">Login<br> successfull</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
+               
+           }
+           else{
+               ImageIcon icon = new ImageIcon("Incorrect Password.png");
+               JOptionPane.showMessageDialog(null,"<html><b style=\"color: red; font-size:10px\">Incorrect<br> Username or Password</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
+           }
+           con.close();
+           
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(null,e);
+       }
+        
+        
+        
+        
+         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
