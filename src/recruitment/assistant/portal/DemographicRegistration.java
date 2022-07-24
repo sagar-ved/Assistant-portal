@@ -402,7 +402,7 @@ public class DemographicRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         //TODO add your handling code here:
 //        CodeExpertiseForm displaycodeexpertiseframe = new CodeExpertiseForm();
 //        displaycodeexpertiseframe.show(); 
 //        //display code expertise frame 
@@ -458,6 +458,10 @@ public class DemographicRegistration extends javax.swing.JFrame {
             PreparedStatement create = demographicUpdateQueryConnection.prepareStatement(query);
             create.executeUpdate();
 //            System.out.println("QueryPrinted");
+
+            ImageIcon icon = new ImageIcon("successfullysaved.gif");
+           JOptionPane.showMessageDialog(null,"<html><b style=\"color: green; font-size:10px\">Deatils saved successfully<br> Forwording you to next page</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
+           clickokbutton();
         }
         catch(Exception e){
            ImageIcon icon = new ImageIcon("Incorrect Password.png");
@@ -536,4 +540,11 @@ public class DemographicRegistration extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
+
+    private void clickokbutton() {
+        CodeExpertiseForm CEF = new CodeExpertiseForm();
+        CEF.show();
+        //display demographic details page frame
+        dispose();
+    }
 }

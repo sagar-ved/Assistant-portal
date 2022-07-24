@@ -218,6 +218,8 @@ public class Portal extends javax.swing.JFrame {
            if(rs.next()){
                ImageIcon icon = new ImageIcon("correct password.png");
                JOptionPane.showMessageDialog(null,"<html><b style=\"color: green; font-size:10px\">Login<br> successfull</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
+               clickokbutton();
+               
                
            }
            else{
@@ -238,6 +240,14 @@ public class Portal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+     public void clickokbutton() {
+         Adminpanel displayadminpanel = new Adminpanel();
+        displayadminpanel.show();
+        dispose();
+
+    }
+    
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       
         setVisible(false);
@@ -251,7 +261,7 @@ public class Portal extends javax.swing.JFrame {
             jPasswordField1.setEchoChar((char)0);
         }
         else{
-            jPasswordField1.setEchoChar('-');
+            jPasswordField1.setEchoChar('*');
         }
 
         // TODO add your handling code here:

@@ -39,7 +39,7 @@ public class RecruitmentAssistantPortal {
    public static Connection connecttodatabase() throws Exception{
     String url = "jdbc:mysql://localhost:3306/RAPortal";
         String uname = "root";
-        String pass = "1234567890";
+        String pass = "Sagar@21";
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection(url,uname,pass);
         //System.out.print("Connection Establish! Level 1 \n");

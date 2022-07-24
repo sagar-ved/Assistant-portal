@@ -4,6 +4,8 @@
  */
 package recruitment.assistant.portal;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sagarved
@@ -33,13 +35,13 @@ public class Adminpanel extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         comboexplan = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        combolevel = new javax.swing.JComboBox<>();
+        combolevel = new javax.swing.JComboBox<String>();
         jLabel11 = new javax.swing.JLabel();
-        combocodenumber = new javax.swing.JComboBox<>();
+        combocodenumber = new javax.swing.JComboBox<String>();
         jTextField1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        combocodetimer = new javax.swing.JComboBox<>();
-        comboquestiontimer = new javax.swing.JComboBox<>();
+        combocodetimer = new javax.swing.JComboBox<String>();
+        comboquestiontimer = new javax.swing.JComboBox<String>();
         jLabel16 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -59,8 +61,8 @@ public class Adminpanel extends javax.swing.JFrame {
         jTextArea5 = new javax.swing.JTextArea();
         jButton8 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        comboquestion = new javax.swing.JComboBox<>();
-        ComboQuestionScore = new javax.swing.JComboBox<>();
+        comboquestion = new javax.swing.JComboBox<String>();
+        ComboQuestionScore = new javax.swing.JComboBox<String>();
         jLabel15 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -70,6 +72,7 @@ public class Adminpanel extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -391,6 +394,15 @@ public class Adminpanel extends javax.swing.JFrame {
         jMenu7.setText("Log Out");
         jMenuBar1.add(jMenu7);
 
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Close.png"))); // NOI18N
+        jMenu8.setText("Exit");
+        jMenu8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu8ActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu8);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -459,6 +471,12 @@ public class Adminpanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboquestiontimerActionPerformed
 
+    private void jMenu8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu8ActionPerformed
+       System.out.println("i am working");
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -520,6 +538,7 @@ public class Adminpanel extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
